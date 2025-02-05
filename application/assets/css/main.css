@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Okine';
+    src: url('assets/fonts/okine/MADEOkineSansPERSONALUSE-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* font-display: swap; */
+}
+
+@font-face {
+    font-family: 'Okine';
+    src: url('assets/fonts/okine/MADEOkineSansPERSONALUSE-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Okine';
+    src: url('assets/fonts/okine/MADEOkineSansPERSONALUSE-Light.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    @apply min-h-screen scroll-smooth;
+    
+    font-family: 'Okine', sans-serif;
+    background: rgb(255,255,255);
+    background: linear-gradient(283deg, rgba(255,255,255,1) 0%, rgba(12,25,64,1) 0%, rgba(0,0,0,1) 50%);
+    color: #ffffff;
+}
+
+footer {
+    @apply p-20;
+    background-color: black;
+}
