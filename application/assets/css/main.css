@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "animate.css";
 
 @font-face {
     font-family: 'Okine';
@@ -24,16 +25,62 @@
     font-display: swap;
 }
 
+html {
+    background-color: black; 
+}
+
 body {
-    @apply min-h-screen scroll-smooth;
+    @apply min-h-screen;
     
     font-family: 'Okine', sans-serif;
     background: rgb(255,255,255);
-    background: linear-gradient(283deg, rgba(255,255,255,1) 0%, rgba(12,25,64,1) 0%, rgba(0,0,0,1) 50%);
+    background: linear-gradient(302deg, rgba(255,255,255,1) 0%, rgba(12,25,64,1) 0%, rgba(0,0,0,1) 70%);
+    /* background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(12,25,64,1) 0%, rgba(0,0,0,1) 80%); */
     color: #ffffff;
 }
 
 footer {
     @apply p-20;
     background-color: black;
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+@keyframes fadeOutDown {
+from {
+    opacity: 1;
+    transform: translateY(0);
+}
+to {
+    opacity: 0;
+    transform: translateY(20px);
+}
+}
+
+.animate-fade-in-up {
+animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-out-down {
+animation: fadeOutDown 0.8s ease-in forwards;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
