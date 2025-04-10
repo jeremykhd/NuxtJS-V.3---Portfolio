@@ -17,4 +17,7 @@ export default defineNuxtConfig({
   },
 
   modules: ["@nuxt/icon", "@pinia/nuxt"],
+  nitro: {
+    preset: "vercel",
+  },
 });
