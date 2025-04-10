@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import type { Portfolio } from '~/types/data';
-
-
 const data = useState<Portfolio>('portfolioData');
 </script>
 

@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 import type { SocialLinks } from '~/types/data';
+const emit = defineEmits(['openProjectModal'])
 
 const props = defineProps<{
     background: string;
     hover?: boolean;
     title: string;
+    slug: string;
     type: string;
     height: string;
     width: string;
@@ -14,10 +16,13 @@ const props = defineProps<{
 
 const hover = ref(false);
 
+const handleProjectModal = (projectTitle : string) => {
+    emit('openProjectModal', {title: projectTitle});
+}
 </script>
 
 <template>
-    <div 
+<div 
     v-on:mouseenter="hover = true"
     v-on:mouseleave="hover = false"
     class="group relative rounded-lg overflow-hidden"
@@ -33,11 +38,7 @@ const hover = ref(false);
     <img class="z-0 absolute w-full h-full rounded-lg transition-all duration-300" :class="{'blur-xs' : hover, 'scale-110' : hover}" :src="background"/>
     <div class="bg-transparent rounded-lg p-5 flex flex-col justify-between relative h-full w-full">
         <div class="flex flex-row justify-between">
-
-            <div class="">
-                <transition name="fade">
-                </transition>
-            </div>
+            <div></div>
             <span class=" uppercase tracking-wide">
                 {{ type }}
             </span>
@@ -51,9 +52,11 @@ const hover = ref(false);
                         </span>
                     </div>
                     <div class="flex h-fit">
-                        <span class="text-2xl lg:text-4xl font-medium tracking-wider overflow-ellipsis truncate">
-                            {{ title }}
-                        </span>
+                        <!-- <NuxtLink :to="'/projets/' + slug"> -->
+                            <span v-on:click="handleProjectModal(title)" class="cursor-pointer text-2xl lg:text-4xl font-medium tracking-wider overflow-ellipsis truncate">
+                                {{ title }}
+                            </span>
+                        <!-- </NuxtLink> -->
                     </div>
                 </div>
                 <div class="flex flex-row space-x-2 items-end content-center px-4">
@@ -64,5 +67,6 @@ const hover = ref(false);
             </div>
         </transition>
     </div>
-    </div>
+</div>
+
 </template>

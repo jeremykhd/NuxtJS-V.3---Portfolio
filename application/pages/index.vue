@@ -25,26 +25,7 @@ const portfolio = useState<Portfolio>('portfolioData');
                 </div>
             </div>
         </section>
-        <div class="w-full p-10 pt-15">
-            <div class="flex flex-row justify-center">
-                <span class="text-xl bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">Quelques projets récents</span>
-            </div>
-        </div>
-        <section class="w-full p-4">
-            <div class="grid grid-cols-6 gap-4 xl:gap-10">
-                <card-project 
-                    v-for="(project, index) in portfolio.projects"
-                    :key="project.name"
-                    :height="index < 2 ? 'lg' : 'md'"
-                    :width="index < 2 ? 'md' : 'sm'"
-                    :title="project.name"
-                    :type="project.type"
-                    :background="project.background"
-                    :urls="project.urls"
-                    :technologies="project.technologies"
-                />
-            </div>
-        </section>
+        <ProjectsSection :projects="portfolio.projects"/>
         <div class="h-24">
 
         </div>
