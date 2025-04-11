@@ -15,12 +15,6 @@ export default defineNuxtConfig({
     vueJsx: {
       mergeProps: true,
     },
-    resolve: {
-      alias: {
-        "~": "/",
-        "@": "/",
-      },
-    },
   },
 
   modules: ["@nuxt/icon", "@pinia/nuxt"],

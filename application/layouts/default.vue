@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import type { Portfolio } from '../types/data';
+import type { Portfolio } from '@/types/data';
 import { SpeedInsights } from '@vercel/speed-insights/vue';
-import { useState } from 'nuxt/app';
 
 const data = useState<Portfolio>('portfolioData');
 </script>
